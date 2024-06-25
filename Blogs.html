@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs and Journals - FieldFocus</title>
+    <style>
+         /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styles */
+        body, html {
+            font-family: Arial, sans-serif;
+            color: #ccf5ff;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+
+        /* Header styles */
+        header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        header .logo {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background: #007acc;
+            border-radius: 5px;
+        }
+
+        nav ul li:hover ul,
+        nav ul li:focus-within ul {
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background: rgba(0, 0, 0, 0.9);
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+            width: 150px;
+            display: block;
+        }
+        
+        /* Blog Section */
+        .blog-section {
+            margin-top: 70px; /* Adjusted for header height */
+            padding: 20px 0;
+        }
+
+        .blog-section h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .blog-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .blog-card {
+            background-color: #e6faff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 calc(33% - 20px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card .content {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card .content h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .blog-card .content p {
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .blog-card .content a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .blog-card .content a:hover,
+        .blog-card .content a:focus {
+            text-decoration: underline;
+        }
+
+        /* Journal Section */
+        .journal-section {
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+
+        .journal-section h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .journal-entry {
+            background-color: #e6faff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            flex: 1 1 calc(33% - 20px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .journal-entry img {
+            width: 10%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .journal-entry .content {
+            padding: 15px;
+        }
+
+        .journal-entry .content h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .journal-entry .content p {
+            color: #555;
+        }
+
+        .journal-entry .content a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .journal-entry .content a:hover,
+        .journal-entry .content a:focus {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-card,
+            .journal-entry {
+                flex: 1 1 100%;
+            }
+              nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<section class="hero-section">
+    <header>
+        <img src="images/FieldFind.png" alt="FieldFocus Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li>
+                    <a href="resources.html">Fields</a>
+                    <ul>
+                        <li><a href="engineering.html">Engineering</a></li>
+                        <li><a href="medicine.html">Medicine</a></li>
+                        <li><a href="arts.html">Arts</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="law.html">Law</a></li>
+                        <li><a href="education.html">Education</a></li>
+                    </ul>
+                </li>
+                <li><a href="blogs.html">Blog</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<!-- Blog Section -->
+<section class="blog-section">
+    <div class="container">
+        <h2>Latest Blogs</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="images/Engiblog.jpg" alt="Engiblog">
+                <div class="content">
+                    <h3>Exploring Career Opportunities in Engineering</h3>
+                    <p>Discover the latest trends and opportunities in the field of engineering. From traditional roles to emerging technologies, explore how you can advance your career.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Mediblog.jpg" alt="Mediblog">
+                <div class="content">
+                    <h3>Breaking into the Medical Field</h3>
+                    <p>Interested in a career in medicine? Learn about the different pathways, educational requirements, and the future of healthcare careers.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Artblog.jpg" alt="Artblog">
+                <div class="content">
+                    <h3>Creative Careers in the Arts</h3>
+                    <p>Explore the diverse opportunities in the arts sector. From visual arts to performing arts, find out how you can turn your passion into a profession.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Techblog.jpg" alt="Techblog">
+                <div class="content">
+                    <h3>The Future of Technology Careers</h3>
+                    <p>Stay ahead of the curve by understanding the future of technology careers. Discover emerging fields and how you can make an impact in the tech industry.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Eublog.jpg" alt="Eublog">
+                <div class="content">
+                    <h3>Balancing Passion and Career in the Education</h3>
+                    <p>Learn how to strike a balance between your passions and a successful career in the education. Insights from industry professionals and experts.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Law blog.jpg" alt="Law blog">
+                <div class="content">
+                    <h3>Why Do We Need Laws?</h3>
+                    <p>Understand where laws come from and why we need laws that protect us from discrimination because of our race, gender, age, or because of a disability.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Journal Section -->
+<section class="journal-section">
+    <div class="container">
+        <h2>Latest Journals</h2>
+        <div class="journal-entry">
+            <img src="images/Engjournal.jpg" alt="Engjournal">
+            <div class="content">
+                <h3>Journal of Advanced Engineering</h3>
+                <p>An in-depth look at the latest research and developments in engineering. This edition covers topics from sustainable engineering practices to cutting-edge technologies.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="journal-entry">
+            <img src="images/Medijournal.jpg" alt="Medijournal">
+            <div class="content">
+                <h3>Medical Science Journal</h3>
+                <p>Explore the latest findings and advancements in medical science. From innovative treatments to breakthrough research, this journal offers a wealth of information.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="journal-entry">
+            <img src="images/Artjournal.jpg" alt="Artjournal">
+            <div class="content">
+                <h3>Art and Design Quarterly</h3>
+                <p>Dive into the world of art and design with this comprehensive journal. Featuring interviews with artists, gallery reviews, and trends in the creative industries.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="journal-entry">
+            <img src="images/TechJ.jpg" alt="Journal Image 4">
+            <div class="content">
+                <h3>Technology Review</h3>
+                <p>Stay updated with the latest technological advancements and research. This journal covers everything from AI to quantum computing and beyond.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 FieldFocus. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

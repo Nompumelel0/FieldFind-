@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FieldFocus - About Us</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styles */
+        body, html {
+            font-family: Arial, sans-serif;
+            color: #333;
+            height: 100%;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        /* Background image */
+        .about-section {
+            background: url('images/AboutUsBG.jpeg') no-repeat center center/cover;
+            padding: 100px 20px;
+            position: relative;
+            color: #fff;
+        }
+        
+         header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        header .logo {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background: #007acc;
+            border-radius: 5px;
+        }
+
+        nav ul li:hover ul,
+        nav ul li:focus-within ul {
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background: rgba(0, 0, 0, 0.9);
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+            width: 150px;
+            display: block;
+        }
+
+        /* Overlay for better text visibility */
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Content inside about section */
+        .about-section .content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        .about-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Content sections */
+        .content-section {
+            padding: 50px 20px;
+            background: #e6f9ff;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .content-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        /* Feature boxes */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .feature {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .about-section h1 {
+                font-size: 2.5em;
+            }
+
+            .about-section p {
+                font-size: 1em;
+            }
+
+            .content-section h2 {
+                font-size: 2em;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-section h1 {
+                font-size: 2em;
+            }
+
+            .about-section p {
+                font-size: 0.9em;
+            }
+
+            .content-section h2 {
+                font-size: 1.8em;
+            }
+
+            .features {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header Section -->
+<section class="hero-section">
+    <header>
+        <img src="images/FieldFind.png" alt="FieldFocus Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li>
+                    <a href="resources.html">Fields</a>
+                    <ul>
+                        <li><a href="engineering.html">Engineering</a></li>
+                        <li><a href="medicine.html">Medicine</a></li>
+                        <li><a href="arts.html">Arts</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="law.html">Law</a></li>
+                        <li><a href="education.html">Education</a></li>
+                    </ul>
+                </li>
+                <li><a href="blogs.html">Blog</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<!-- About Section -->
+<section class="about-section">
+    <div class="content">
+        <h1>About Us</h1>
+        <p>Welcome to FieldFocus! We are dedicated to providing students and young professionals with the resources and guidance they need to succeed in their chosen career fields.</p>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="content-section">
+    <h2>Our Mission</h2>
+    <p>Our mission is to empower individuals by providing access to tailored career resources, insights, and support. We believe in the power of knowledge and community to foster growth and success.</p>
+    <div class="features">
+        <div class="feature">
+            <h3>Empowerment</h3>
+            <p>We aim to empower users with the tools and information they need to make informed career decisions.</p>
+        </div>
+        <div class="feature">
+            <h3>Innovation</h3>
+            <p>We continuously seek innovative ways to deliver career guidance and support.</p>
+        </div>
+        <div class="feature">
+            <h3>Community</h3>
+            <p>We foster a supportive community where users can share experiences and insights.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Vision Section -->
+<section class="content-section">
+    <h2>Our Vision</h2>
+    <p>We envision a world where everyone has access to the knowledge and support they need to excel in their careers. FieldFocus aims to be a leading platform for career development and lifelong learning.</p>
+    <div class="features">
+        <div class="feature">
+            <h3>Global Reach</h3>
+            <p>Expanding our platform to reach individuals worldwide.</p>
+        </div>
+        <div class="feature">
+            <h3>Excellence</h3>
+            <p>Striving for excellence in all the resources and services we provide.</p>
+        </div>
+        <div class="feature">
+            <h3>Impact</h3>
+            <p>Making a positive impact on the careers and lives of our users.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Backstory Section -->
+<section class="content-section">
+    <h2>Our Story</h2>
+    <p>FieldFocus was founded by a group of professionals who recognized the need for a comprehensive platform that could guide individuals through the complexities of career planning. Our journey began with a simple goal: to make career information accessible and actionable for everyone. Over the years, we have grown into a trusted source of career insights and support, helping thousands of users achieve their professional goals.</p>
+    <div class="features">
+        <div class="feature">
+            <h3>Our Beginning</h3>
+            <p>Started as a small project to provide career advice to local students.</p>
+        </div>
+        <div class="feature">
+            <h3>Growth</h3>
+            <p>Expanded to offer a wide range of resources and support services globally.</p>
+        </div>
+        <div class="feature">
+            <h3>Future</h3>
+            <p>Continuing to innovate and expand to meet the needs of our growing user base.</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

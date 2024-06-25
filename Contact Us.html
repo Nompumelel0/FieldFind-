@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FieldFocus</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styles */
+        body, html {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            height: 100%;
+            overflow-x: hidden;
+            background-color: #f4f4f4;
+        }
+
+        /* Header styles */
+         header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        header .logo {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background: #007acc;
+            border-radius: 5px;
+        }
+
+        nav ul li:hover ul,
+        nav ul li:focus-within ul {
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background: rgba(0, 0, 0, 0.9);
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+            width: 150px;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .contact-details, .contact-form {
+            margin-bottom: 20px;
+        }
+
+        .contact-details h3, .contact-form h3 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .contact-details p {
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1.0em;
+            margin: 0 10px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form form input,
+        .contact-form form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            width: calc(100% - 24px);
+        }
+
+        .contact-form form button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            width: 150px;
+            align-self: center;
+        }
+
+        .contact-form form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-details, .contact-form {
+                margin-bottom: 15px;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .social-links a {
+                margin-bottom: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <img src="images/FieldFind.png" alt="FieldFocus Logo" class="logo">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="resources.html">Fields</a></li>
+            <li><a href="blogs.html">Blog</a></li>
+            <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-details">
+            <h3>Get in Touch</h3>
+            <p>If you have any questions, feedback, or inquiries, feel free to reach out to us. We're here to help and would love to hear from you.</p>
+            <p><strong>Email:</strong> support@fieldfocus.com</p>
+            <p><strong>Phone:</strong> +27 79 097 1895</p>
+            <p><strong>Address:</strong> 239 Pretorius Street, Pretoria Central, Pretoria, 0126</p>
+            <div class="social-links">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h3>Contact Form</h3>
+            <form action="mailto:support@fieldfocus.com" method="POST" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 FieldFocus. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FieldFocus - Home</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styles */
+        body, html {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Background image */
+        .hero-section {
+            background: url('images/Blue.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* Overlay for better text visibility */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Header styles */
+        header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        header .logo {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background: #007acc;
+            border-radius: 5px;
+        }
+
+        nav ul li:hover ul,
+        nav ul li:focus-within ul {
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background: rgba(0, 0, 0, 0.9);
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+            width: 150px;
+            display: block;
+        }
+
+        /* Main content styles */
+        .main-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .main-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .main-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .main-content a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .main-content a:hover,
+        .main-content a:focus {
+            background: #005f99;
+        }
+
+        /* Overview section */
+        .overview-section {
+            position: relative;
+            z-index: 2;
+            padding: 10px 10px;
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .overview-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .feature {
+            margin: 10px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1em;
+        }
+        
+         /* Overlay for better text visibility */
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Content inside about section */
+        .about-section .content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        .about-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Content sections */
+        .content-section {
+            padding: 50px 20px;
+            background: #e6f9ff;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .content-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        /* Feature boxes */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .feature {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature p {
+            font-size: 1em;
+            color: #555;
+        }
+         /* Resources Section */
+        .resources-section {
+            margin-top: 150px; /* Adjusted for header height */
+            padding: 20px 0;
+        }
+
+        .resources-section h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .resources-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .resource-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 calc(33% - 20px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .resource-card .content {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-card .content h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .resource-card .content p {
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .resource-card .content a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .resource-card .content a:hover,
+        .resource-card .content a:focus {
+            text-decoration: underline;
+        }
+
+        /* More Information Section */
+        .more-info {
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+
+        .more-info h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .more-info p {
+            text-align: center;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+         /* Blog Section */
+        .blog-section {
+            margin-top: 70px; /* Adjusted for header height */
+            padding: 20px 0;
+        }
+
+        .blog-section h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .blog-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .blog-card {
+            background-color: #e6faff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 calc(33% - 20px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card .content {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card .content h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .blog-card .content p {
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .blog-card .content a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .blog-card .content a:hover,
+        .blog-card .content a:focus {
+            text-decoration: underline;
+        }
+
+        /* Journal Section */
+        .journal-section {
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+
+        .journal-section h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .journal-entry {
+            background-color: #e6faff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            flex: 1 1 calc(33% - 20px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .journal-entry img {
+            width: 10%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .journal-entry .content {
+            padding: 15px;
+        }
+
+        .journal-entry .content h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .journal-entry .content p {
+            color: #555;
+        }
+
+        .journal-entry .content a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .journal-entry .content a:hover,
+        .journal-entry .content a:focus {
+            text-decoration: underline;
+        }
+        /* Contact Section */
+        .contact-section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .contact-details, .contact-form {
+            margin-bottom: 20px;
+        }
+
+        .contact-details h3, .contact-form h3 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .contact-details p {
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1.0em;
+            margin: 0 10px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form form input,
+        .contact-form form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            width: calc(100% - 24px);
+        }
+
+        .contact-form form button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            width: 150px;
+            align-self: center;
+        }
+
+        .contact-form form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        /* Footer styles */
+        footer {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+        
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .main-content h1 {
+                font-size: 2em;
+            }
+
+            .main-content p {
+                font-size: 1em;
+            }
+            
+            .about-section h1 {
+                font-size: 2.5em;
+            }
+
+            .about-section p {
+                font-size: 1em;
+            }
+
+            .content-section h2 {
+                font-size: 2em;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                width: 90%;
+            }
+            
+            .resource-card {
+                flex: 1 1 100%;
+            }
+            
+            .blog-card,
+            .journal-entry {
+                flex: 1 1 100%;
+            }
+            
+             .contact-details, .contact-form {
+                margin-bottom: 15px;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .social-links a {
+                margin-bottom: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content h1 {
+                font-size: 1.5em;
+            }
+
+            .main-content p {
+                font-size: 0.9em;
+            }
+            .about-section h1 {
+                font-size: 2em;
+            }
+
+            .about-section p {
+                font-size: 0.9em;
+            }
+
+            .content-section h2 {
+                font-size: 1.8em;
+            }
+
+            .features {
+                gap: 10px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <header>
+        <img src="images/FieldFind.png" alt="FieldFocus Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li>
+                    <a href="resources.html">Fields</a>
+                    <ul>
+                        <li><a href="engineering.html">Engineering</a></li>
+                        <li><a href="medicine.html">Medicine</a></li>
+                        <li><a href="arts.html">Arts</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="law.html">Law</a></li>
+                        <li><a href="education.html">Education</a></li>
+                    </ul>
+                </li>
+                <li><a href="blogs.html">Blog</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h1>Welcome to FieldFocus</h1>
+        <p>Your gateway to specialized career resources and insights.</p>
+        <a href="resources.html">Explore Resources</a>
+    </div>
+</section>
+
+<!-- Overview Section -->
+<section class="overview-section">
+    <h2>Our Features</h2>
+    <div class="features">
+        <div class="feature">
+            <h3>Career Insights</h3>
+            <p>Gain knowledge from industry experts and successful professionals in various fields.</p>
+        </div>
+        <div class="feature">
+            <h3>Expert Advice</h3>
+            <p>Access exclusive interviews and articles from top industry leaders.</p>
+        </div>
+        <div class="feature">
+            <h3>Community Support</h3>
+            <p>Join our community to network and connect with like-minded individuals.</p>
+        </div>
+        <div class="feature">
+            <h3>Resource Library</h3>
+            <p>Browse our extensive library of articles, videos, and guides to help you succeed.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+    <div class="content">
+        <h1>About Us</h1>
+        <p>Welcome to FieldFocus! We are dedicated to providing students and young professionals with the resources and guidance they need to succeed in their chosen career fields.</p>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="content-section">
+    <h2>Our Mission</h2>
+    <p>Our mission is to empower individuals by providing access to tailored career resources, insights, and support. We believe in the power of knowledge and community to foster growth and success.</p>
+    <div class="features">
+        <div class="feature">
+            <h3>Empowerment</h3>
+            <p>We aim to empower users with the tools and information they need to make informed career decisions.</p>
+        </div>
+        <div class="feature">
+            <h3>Innovation</h3>
+            <p>We continuously seek innovative ways to deliver career guidance and support.</p>
+        </div>
+        <div class="feature">
+            <h3>Community</h3>
+            <p>We foster a supportive community where users can share experiences and insights.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Vision Section -->
+<section class="content-section">
+    <h2>Our Vision</h2>
+    <p>We envision a world where everyone has access to the knowledge and support they need to excel in their careers. FieldFocus aims to be a leading platform for career development and lifelong learning.</p>
+    <div class="features">
+        <div class="feature">
+            <h3>Global Reach</h3>
+            <p>Expanding our platform to reach individuals worldwide.</p>
+        </div>
+        <div class="feature">
+            <h3>Excellence</h3>
+            <p>Striving for excellence in all the resources and services we provide.</p>
+        </div>
+        <div class="feature">
+            <h3>Impact</h3>
+            <p>Making a positive impact on the careers and lives of our users.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Backstory Section -->
+<section class="content-section">
+    <h2>Our Story</h2>
+    <p>FieldFocus was founded by a group of professionals who recognized the need for a comprehensive platform that could guide individuals through the complexities of career planning. Our journey began with a simple goal: to make career information accessible and actionable for everyone. Over the years, we have grown into a trusted source of career insights and support, helping thousands of users achieve their professional goals.</p>
+    <div class="features">
+        <div class="feature">
+            <h3>Our Beginning</h3>
+            <p>Started as a small project to provide career advice to local students.</p>
+        </div>
+        <div class="feature">
+            <h3>Growth</h3>
+            <p>Expanded to offer a wide range of resources and support services globally.</p>
+        </div>
+        <div class="feature">
+            <h3>Future</h3>
+            <p>Continuing to innovate and expand to meet the needs of our growing user base.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Resources Section -->
+<section class="resources-section">
+    <div class="container">
+        <h2>Resources</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <img src="images/Engineering.jpeg" alt="Engineering">
+                <div class="content">
+                    <h3>Engineering</h3>
+                    <p>Explore comprehensive resources and guides on various engineering disciplines, from civil and mechanical to electrical and aerospace.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="images/Medicine.jpeg" alt="Medicine">
+                <div class="content">
+                    <h3>Medicine</h3>
+                    <p>Dive into a wealth of medical resources covering topics such as healthcare practices, medical research, and patient care.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="images/Arts.jpeg" alt="Arts">
+                <div class="content">
+                    <h3>Arts</h3>
+                    <p>Discover resources on the arts, including visual arts, performing arts, and literature, with guides on career paths and educational opportunities.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="images/Technology.jpeg" alt="Technology">
+                <div class="content">
+                    <h3>Technology</h3>
+                    <p>Access a wide range of resources on technology, from software development and data science to AI and cybersecurity.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="images/Education.jpg" alt="Education">
+                <div class="content">
+                    <h3>Education</h3>
+                    <p>Find valuable educational resources for teachers, students, and education professionals, including teaching materials and learning strategies.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="images/Law.jpg" alt="Law">
+                <div class="content">
+                    <h3>Law</h3>
+                    <p>Explore comprehensive legal resources and guides on various aspects of law, including criminal law, corporate law, and more.</p>
+                    <a href="#">Learn More</a>
+                </div>
+           
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- More Information Section -->
+<section class="more-info">
+    <div class="container">
+        <h2>More Information on Resources</h2>
+        <p>At FieldFocus, we provide curated and up-to-date resources across various fields to help you advance your knowledge and career. Whether you are a student, a professional, or just someone looking to expand your horizons, our resources are designed to support your learning journey. Dive into detailed guides, explore the latest research, and connect with a community of like-minded individuals. Your path to success starts here.</p>
+    </div>
+</section>
+
+<div class="blog-card">
+                <img src="images/Mediblog.jpg" alt="Mediblog">
+                <div class="content">
+                    <h3>Breaking into the Medical Field</h3>
+                    <p>Interested in a career in medicine? Learn about the different pathways, educational requirements, and the future of healthcare careers.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Artblog.jpg" alt="Artblog">
+                <div class="content">
+                    <h3>Creative Careers in the Arts</h3>
+                    <p>Explore the diverse opportunities in the arts sector. From visual arts to performing arts, find out how you can turn your passion into a profession.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Techblog.jpg" alt="Techblog">
+                <div class="content">
+                    <h3>The Future of Technology Careers</h3>
+                    <p>Stay ahead of the curve by understanding the future of technology careers. Discover emerging fields and how you can make an impact in the tech industry.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Eublog.jpg" alt="Eublog">
+                <div class="content">
+                    <h3>Balancing Passion and Career in the Education</h3>
+                    <p>Learn how to strike a balance between your passions and a successful career in the education. Insights from industry professionals and experts.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Law blog.jpg" alt="Law blog">
+                <div class="content">
+                    <h3>Why Do We Need Laws?</h3>
+                    <p>Understand where laws come from and why we need laws that protect us from discrimination because of our race, gender, age, or because of a disability.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+
+<!-- Journal Section -->
+<section class="journal-section">
+    <div class="container">
+        <h2>Latest Journals</h2>
+        <div class="journal-entry">
+            <img src="images/Engjournal.jpg" alt="Engjournal">
+            <div class="content">
+                <h3>Journal of Advanced Engineering</h3>
+                <p>An in-depth look at the latest research and developments in engineering. This edition covers topics from sustainable engineering practices to cutting-edge technologies.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="journal-entry">
+            <img src="images/Medijournal.jpg" alt="Medijournal">
+            <div class="content">
+                <h3>Medical Science Journal</h3>
+                <p>Explore the latest findings and advancements in medical science. From innovative treatments to breakthrough research, this journal offers a wealth of information.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="journal-entry">
+            <img src="images/Artjournal.jpg" alt="Artjournal">
+            <div class="content">
+                <h3>Art and Design Quarterly</h3>
+                <p>Dive into the world of art and design with this comprehensive journal. Featuring interviews with artists, gallery reviews, and trends in the creative industries.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="journal-entry">
+            <img src="images/TechJ.jpg" alt="Journal Image 4">
+            <div class="content">
+                <h3>Technology Review</h3>
+                <p>Stay updated with the latest technological advancements and research. This journal covers everything from AI to quantum computing and beyond.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-details">
+            <h3>Get in Touch</h3>
+            <p>If you have any questions, feedback, or inquiries, feel free to reach out to us. We're here to help and would love to hear from you.</p>
+            <p><strong>Email:</strong> support@fieldfocus.com</p>
+            <p><strong>Phone:</strong> +27 79 097 1895</p>
+            <p><strong>Address:</strong> 239 Pretorius Street, Pretoria Central, Pretoria, 0126</p>
+            <div class="social-links">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h3>Contact Form</h3>
+            <form action="mailto:support@fieldfocus.com" method="POST" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 FieldFocus. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

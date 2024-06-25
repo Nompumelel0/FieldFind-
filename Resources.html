@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - FieldFocus</title>
+    <style>
+         /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styles */
+        body, html {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+
+        /* Header styles */
+        header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        header .logo {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background: #007acc;
+            border-radius: 5px;
+        }
+
+        nav ul li:hover ul,
+        nav ul li:focus-within ul {
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background: rgba(0, 0, 0, 0.9);
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+            width: 150px;
+            display: block;
+        }
+
+        /* Resources Section */
+        .resources-section {
+            margin-top: 150px; /* Adjusted for header height */
+            padding: 20px 0;
+        }
+
+        .resources-section h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .resources-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .resource-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 calc(33% - 20px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .resource-card .content {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-card .content h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .resource-card .content p {
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .resource-card .content a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .resource-card .content a:hover,
+        .resource-card .content a:focus {
+            text-decoration: underline;
+        }
+
+        /* More Information Section */
+        .more-info {
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+
+        .more-info h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .more-info p {
+            text-align: center;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .resource-card {
+                flex: 1 1 100%;
+            }
+              nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<section class="hero-section">
+    <header>
+        <img src="images/FieldFind.png" alt="FieldFocus Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li>
+                    <a href="resources.html">Fields</a>
+                    <ul>
+                        <li><a href="engineering.html">Engineering</a></li>
+                        <li><a href="medicine.html">Medicine</a></li>
+                        <li><a href="arts.html">Arts</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="law.html">Law</a></li>
+                        <li><a href="education.html">Education</a></li>
+                    </ul>
+                </li>
+                <li><a href="blogs.html">Blog</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<!-- Resources Section -->
+<section class="resources-section">
+    <div class="container">
+        <h2>Resources</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <img src="images/Engineering.jpeg" alt="Engineering">
+                <div class="content">
+                    <h3>Engineering</h3>
+                    <p>Explore comprehensive resources and guides on various engineering disciplines, from civil and mechanical to electrical and aerospace.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="images/Medicine.jpeg" alt="Medicine">
+                <div class="content">
+                    <h3>Medicine</h3>
+                    <p>Dive into a wealth of medical resources covering topics such as healthcare practices, medical research, and patient care.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="images/Arts.jpeg" alt="Arts">
+                <div class="content">
+                    <h3>Arts</h3>
+                    <p>Discover resources on the arts, including visual arts, performing arts, and literature, with guides on career paths and educational opportunities.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="images/Technology.jpeg" alt="Technology">
+                <div class="content">
+                    <h3>Technology</h3>
+                    <p>Access a wide range of resources on technology, from software development and data science to AI and cybersecurity.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="images/Education.jpg" alt="Education">
+                <div class="content">
+                    <h3>Education</h3>
+                    <p>Find valuable educational resources for teachers, students, and education professionals, including teaching materials and learning strategies.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="images/Law.jpg" alt="Law">
+                <div class="content">
+                    <h3>Law</h3>
+                    <p>Explore comprehensive legal resources and guides on various aspects of law, including criminal law, corporate law, and more.</p>
+                    <a href="#">Learn More</a>
+                </div>
+           
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- More Information Section -->
+<section class="more-info">
+    <div class="container">
+        <h2>More Information on Resources</h2>
+        <p>At FieldFocus, we provide curated and up-to-date resources across various fields to help you advance your knowledge and career. Whether you are a student, a professional, or just someone looking to expand your horizons, our resources are designed to support your learning journey. Dive into detailed guides, explore the latest research, and connect with a community of like-minded individuals. Your path to success starts here.</p>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 FieldFocus. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
